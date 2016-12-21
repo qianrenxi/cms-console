@@ -1,0 +1,9 @@
+<div class="cate-select">
+  <input type="hidden" name="cateId" value="{{cate && cate.id}}">
+  <input type="text" name="cateName" value="{{cate && cate.name}}" readonly class="select-handle form-control" [ngClass]="{focus: focus}" (click)="open()" placeholder="选择分类">
+  <div class="select-drop-down" [hidden]="!focus">
+    <div style="padding: 3px 15px;">清空选择</div>
+    <Tree [nodes]="cates" (onActivate)="onActivate($event)"></Tree>
+  </div>
+</div>
+<div class="cms-overlay-backdrop" [hidden]="!focus" (click)="close()"></div>

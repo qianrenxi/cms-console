@@ -1,0 +1,242 @@
+// Here you can add other styles
+html, body{
+	font: 14px/1.5 "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.hide, .hidden {
+    display: none !important;
+}
+
+body:not(.top-nav) {
+    .sidebar {
+        ul.nav {
+            li.nav-item {
+                &.nav-dropdown {
+                    > a.nav-dropdown-toggle {
+                        background: rgba($color: #000, $alpha: 0.1);
+                        border-bottom: 1px solid rgba($color: #000, $alpha: 0.6); 
+                    }
+
+                    &.open {
+                        > .nav-dropdown-items {
+                            background: rgba($color: #000, $alpha: 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    //margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.breadcrumb-menu {
+    position: absolute;
+    top: 3px;
+    right: 1rem;
+}
+
+.main .container-fluid {
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.console-title {
+    padding: 15px 0 8px 0;
+    
+    &.console-title-border {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        display: inline-block;
+        text-indent: 8px;
+        border-left: 2px solid #88B7E0;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        margin-right: 8px;
+        vertical-align: middle;
+
+        font-size: 16px;    //1.25rem 1rem=16px
+        //line-height: 30px;
+    }
+}
+
+.span-8 {
+    display: block;
+    height: 8px;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-12 {
+    margin-top: 12px;
+}
+
+.margin-top-16 {
+    margin-top: 16px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    // font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+
+    &-default {
+        background-color: #777;
+    }
+    &-primary {
+        background-color: #428bca;
+    }
+    &-success {
+        background-color: #5cb85c;
+    }
+    &-info {
+        background-color: #5bc0de;
+    }
+    &-warning {
+        background-color: #f0ad4e;
+    }
+    &-danger {
+        background-color: #d9534f;
+    }
+}
+
+
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;//5px auto -webkit-focus-ring-color;
+    outline-offset: none;//-2px;
+
+    //-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.125);
+    //box-shadow: inset 0 1px 2px rgba(0,0,0,0.125);
+}
+
+.btn-default {
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+
+    &:active {
+        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.125);
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.125);
+    }
+}
+
+.btn.btn-icon {
+    padding: 8px 10px;
+}
+
+.form-control[readonly] {
+    background-color: #fcfcfc;
+    opacity: 1;
+}
+
+// tables
+.table {
+    background: #FFF;
+    font-size: 12px;
+    border-top: 1px solid #e1e6eb;
+    margin-top: 8px;
+    border: 1px solid #e1e6eb;
+}
+
+.table thead tr th {
+    padding: 8px 8px;
+    font-weight: normal;
+    color: #999;
+    border-bottom: 1px solid #e1e6eb;
+    background-color: #F5F6FA;
+}
+
+.table tbody tr td {
+    padding: 12px 8px;
+    border-top: 0px;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+}
+
+.table tfoot tr td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+    background-color: rgba($color: #F5F6FA, $alpha: 0.2);
+}
+
+.table-before{
+    .search-bar{
+        display: inline-block;
+
+        .search-input-text{
+            min-width: 180px;
+        }
+    }
+}
+
+.pagination {
+    &-datatables {
+        li {
+            //display: inline-block;
+            //position: relative;
+            //float: left;
+            //margin-left: -1px;
+        }
+        li > a, li > span {
+            float: left;
+            position: relative;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            color: #20a8d8;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        
+        li > span {
+            color: #aaaaaa;
+
+            &.text-success{
+                color: #4dbd74;
+            }
+        }
+
+        li > span > select, li > span > input{
+            border: none;
+            padding: 0.5rem 0.2rem;//0.75rem;
+        }
+    }
+}

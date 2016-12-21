@@ -1,0 +1,28 @@
+    <div class="console-title console-title-border">
+      <h5>添加/编辑分类</h5>
+      <div class="pull-right">
+        <button type="button" class="btn btn-default"><i class="fa fa-refresh"></i> 刷新</button>
+        <button type="button" class="btn btn-default" [routerLink]="['/content/category']"><i class="fa fa-reply"></i> 返回列表</button>
+      </div>
+    </div>
+
+<div class="card margin-top-12">
+  <div class="card-block">
+    <form>
+      <div class="form-group">
+        <label for="name">分类名称</label>
+        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="cate.name">
+      </div>
+      <div class="form-group">
+        <label for="identifer">别名/标识符</label>
+        <input type="text" id="identifer" name="identifer" class="form-control" [(ngModel)]="cate.identifer">
+      </div>
+      <div class="form-group">
+        <label for="parent">父级分类</label>
+        <cms-category-lookup [cates]="cates"  [(cate)]="cate.parent"></cms-category-lookup>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="save()">保存</button>
+      <button type="button" class="btn btn-default" (click)="goBack()">取消</button>
+    </form>
+  </div>
+</div>

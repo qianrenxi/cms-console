@@ -1,0 +1,128 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="console-title console-title-border">
+      <h5>文章列表</h5>
+      <div class="pull-right">
+        <button type="button" class="btn btn-default"><i class="fa fa-refresh"></i> 刷新</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['add']">添加文章</button>
+      </div>
+    </div>
+
+    <div class="alert alert-info alert-dismissible margin-top-12" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </div>
+
+    <div class="article-group margin-top-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item active"><a class="nav-link active" href="#">全部(1209)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">已发布(679)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">待审核(69)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">草稿(17)</a></li>
+      </ul>
+    </div>
+
+    <div class="data-table-wapper margin-top-8">
+      <div class="table-before">
+        <div class="search-bar">
+          <form action="" class="form-inline" role="form">
+            <div class="form-group">
+              <cms-category-lookup [(cate)]="article.category"></cms-category-lookup>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control search-input-text" size="36" placeholder="输入文章标题或内容进行搜索">
+            </div>
+            <button class="btn btn-primary">搜索</button>
+          </form>
+        </div>
+        <div class="actions pull-right">
+          <button class="btn btn-default btn-icon"><i class="fa fa-download"></i></button>
+          <button class="btn btn-default btn-icon"><i class="fa fa-gear"></i></button>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th width="10"><input type="checkbox"></th>
+            <th>标题</th>
+            <th>作者</th>
+            <th>分类</th>
+            <th>标签</th>
+            <th>状态</th>
+            <th>最后更改</th>
+            <th>评论</th>
+            <th class="text-right" width="50">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles">
+            <td width="10"><input type="checkbox" name="ids" value="{{article.id}}"></td>
+            <td> <!-- style="vertical-align: top;" -->
+              <a class="text-primary" href="#" [routerLink]="[article.id, 'edit']">{{article.title}}</a>
+              <div class="hide">
+                <a class="text-primary" href="#" [routerLink]="[article.id, 'edit']">编辑</a> |
+                <a class="text-primary" href="#" [routerLink]="[article.id, 'edit']">快速编辑</a> |
+                <a class="text-danger" href="#">移至回收站</a>
+                <a class="text-info" href="#">预览</a>
+              </div>
+            </td>
+            <td><a href="#">Admin</a></td>
+            <td>{{article.category && article.category.name}}</td>
+            <td></td>
+            <td>
+              <span class="label label-success">已发布</span>
+            </td>
+            <td>1小时前</td>
+            <td>暂无评论</td>
+            <td class="text-right" style="width: 50px; word-break:keep-all; white-space:nowrap;"><!-- keep-all:ie, nowrap: chrome -->
+              <a class="text-info" href="#">预览</a>
+              <a class="text-primary" href="#" [routerLink]="[article.id, 'edit']">编辑</a>
+              <a class="text-danger" href="#">删除</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td width="10"><input type="checkbox"></td>
+            <td colspan="8">
+              <div class="pull-left">
+                <div class="actions">
+                  <button class="btn btn-default">标记</button>
+                  <button class="btn btn-success">发布</button>
+                  <button class="btn btn-danger">删除</button>
+                </div>
+              </div>
+              <div class="pull-right">
+                <ul class="pagination-datatables">
+                  <li><span>第1页/共10页</span></li>
+                  <li><span class="no-padding"><input type="text" size="5" class="text-center" placeholder="页码"></span></li>
+                  <li><a class="text-success" href="#">跳转</a></li>
+                  <li><a href="#">首页</a></li>
+                  <li><a href="#">上一页</a></li>
+                  <li><a href="#">下一页</a></li>
+                  <li><a href="#">末页</a></li>
+                  <li><span>共1299条</span></li>
+                  <li>
+                    <span class="no-padding">
+                      <select>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>500</option>
+                        <option>1000</option>
+                      </select>
+                    </span>
+                    <span>条/页</span>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+

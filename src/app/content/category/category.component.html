@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="console-title console-title-border">
+      <h5>分类列表</h5>
+      <div class="pull-right">
+        <button type="button" class="btn btn-default"><i class="fa fa-refresh"></i> 刷新</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['add']">添加分类</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <cms-category-list [cates]="cates"></cms-category-list>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<ul class="cate-list">
+  <li *ngFor="let cate of cates">
+    <div class="item-inner">
+        {{cate.name}} ({{cate.id}})
+        <span class="pull-right">
+          <a class="text-info" href="#">文章(12)</a>
+          <a class="text-primary" href="#" [routerLink]="[cate.id, 'edit']">编辑</a>
+          <a class="text-danger" href="#">删除</a>
+        </span>
+    </div>
+    <cms-category-list *ngIf="hasChildren(cate)" [cates]="cate.children"></cms-category-list>
+  </li>
+</ul>
